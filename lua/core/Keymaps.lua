@@ -14,10 +14,16 @@ keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 -- ---------- 正常模式 ---------- ---
 -- 窗口
-keymap.set("n", "<C-w>l", "<C-w>v") -- 水平新增窗口 
-keymap.set("n", "<C-w>h", "<C-w>v") -- 水平新增窗口 
-keymap.set("n", "<C-w>j", "<C-w>s") -- 垂直新增窗口
-keymap.set("n", "<C-w>k", "<C-w>s") -- 垂直新增窗口
+keymap.set("n", "sl", "<C-w>v") -- 水平新增窗口 
+keymap.set("n", "sh", "<C-w>v") -- 水平新增窗口 
+keymap.set("n", "sj", "<C-w>s") -- 垂直新增窗口
+keymap.set("n", "sk", "<C-w>s") -- 垂直新增窗口
+
+-- 切换光标到对应窗口
+keymap.set("n", "<leader>l", "<C-w>l")  
+keymap.set("n", "<leader>h", "<C-w>h")  
+keymap.set("n", "<leader>j", "<C-w>j") 
+keymap.set("n", "<leader>k", "<C-w>k") 
 
 keymap.set("n", "<C-q>", ":q<CR>") -- 垂直新增窗口
 --保存
