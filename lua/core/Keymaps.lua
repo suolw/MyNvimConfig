@@ -25,16 +25,15 @@ keymap.set("n", "<leader>h", "<C-w>h")
 keymap.set("n", "<leader>j", "<C-w>j") 
 keymap.set("n", "<leader>k", "<C-w>k") 
 
-keymap.set("n", "<C-q>", ":q<CR>") -- 垂直新增窗口
 --保存
 keymap.set({"n", "i"}, "<C-s>", "<Cmd>write<CR>")
 
 -- 取消高亮
 keymap.set("n", "<leader>nh", ":nohl<CR>")
 
--- 切换buffer
-keymap.set("n", "<C-L>", ":bnext<CR>")
-keymap.set("n", "<C-H>", ":bprevious<CR>")
+
+-- 终端
+keymap.set("n", "<C-t>", ":terminal<CR>")
 
 -- ---------- 插件 ---------- ---
 -- nvim-tree
