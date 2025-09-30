@@ -22,17 +22,27 @@ return {
 
         end
 
-        LuaSettings = {
-            settings = {
-                Lua = {
-                    diagnostics = {
-                        globals = {"vim"}
+        local servers = {
+            ["lua-language-server"] = {
+                settings = {
+                    Lua = {
+                        diagnostics = {
+                            globals = { "vim" },
+                        },
                     }
                 }
-            }
+            },
+            pyright = {},
+            ["html-lsp"] = {},
+            ["css-lsp"] = {},
+            ["typescript-language-server"] = {},
+            ["emmet-ls"] = {},
         }
 
-        setup("lua-language-server", LuaSettings)
+        for server, config in pairs(servers) do
+            setup(server, config)
+            vim.lsp.enable(server)
+        end
 
         vim.cmd("LspStart")
         vim.diagnostic.config({
