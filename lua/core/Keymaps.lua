@@ -4,8 +4,8 @@ local keymap = vim.keymap
 
 -- ---------- 插入模式 ---------- ---
 keymap.set("i", "jj", "<ESC>")
-keymap.set("i", "<C-z>", "<Esc>ui", {scilent = ture})
-keymap.set("i", "<C-r>", "<Esc><C-r>ei", {scilent = ture})
+keymap.set("i", "<C-z>", "<Esc>ui", {scilent = true})
+keymap.set("i", "<C-r>", "<Esc><C-r>ei", {scilent = true})
 
 -- ---------- 视觉模式 ---------- ---
 -- 单行或多行移动
@@ -20,10 +20,10 @@ keymap.set("n", "sj", "<C-w>s") -- 垂直新增窗口
 keymap.set("n", "sk", "<C-w>s") -- 垂直新增窗口
 
 -- 切换光标到对应窗口
-keymap.set("n", "<leader>l", "<C-w>l")  
-keymap.set("n", "<leader>h", "<C-w>h")  
-keymap.set("n", "<leader>j", "<C-w>j") 
-keymap.set("n", "<leader>k", "<C-w>k") 
+keymap.set("n", "<leader>l", "<C-w>l")
+keymap.set("n", "<leader>h", "<C-w>h")
+keymap.set("n", "<leader>j", "<C-w>j")
+keymap.set("n", "<leader>k", "<C-w>k")
 
 --保存
 keymap.set({"n", "i"}, "<C-s>", "<Cmd>write<CR>")
@@ -33,8 +33,14 @@ keymap.set("n", "<leader>nh", ":nohl<CR>")
 
 
 -- 终端
-keymap.set("n", "<C-t>", ":terminal<CR>")
+keymap.set("n", "<C-t>", "<C-w>s:terminal pwsh<CR>i")
 
+-- ---------- 终端模式 ---------- ---
+-- 切换光标到对应窗口
+keymap.set("t", "<C-w>l", "<C-\\><C-n><C-w>l")
+keymap.set("t", "<C-w>h", "<C-\\><C-n><C-w>h")
+keymap.set("t", "<C-w>j", "<C-\\><C-n><C-w>j")
+keymap.set("t", "<C-w>k", "<C-\\><C-n><C-w>k")
 -- ---------- 插件 ---------- ---
 -- nvim-tree
 --keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
