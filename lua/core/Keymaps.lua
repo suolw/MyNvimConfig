@@ -4,8 +4,8 @@ local keymap = vim.keymap
 
 -- ---------- 插入模式 ---------- ---
 keymap.set("i", "jj", "<ESC>")
-keymap.set("i", "<C-z>", "<Esc>ui", {scilent = true})
-keymap.set("i", "<C-r>", "<Esc><C-r>ei", {scilent = true})
+keymap.set("i", "<C-z>", "<Esc>ui", {silent = true})
+keymap.set("i", "<C-r>", "<Esc><C-r>ei",  {silent = true})
 
 -- ---------- 视觉模式 ---------- ---
 -- 单行或多行移动
@@ -18,6 +18,11 @@ keymap.set("n", "sl", "<C-w>v") -- 水平新增窗口
 keymap.set("n", "sh", "<C-w>v") -- 水平新增窗口 
 keymap.set("n", "sj", "<C-w>s") -- 垂直新增窗口
 keymap.set("n", "sk", "<C-w>s") -- 垂直新增窗口
+
+keymap.set("n", "<C-UP>", "<C-w>+")
+keymap.set("n", "<C-Down>", "<C-w>-")
+keymap.set("n", "<C-Left>", ":vertical resize -5<CR>")
+keymap.set("n", "<C-Right>", ":vertical resize +5<CR>")
 
 -- 切换光标到对应窗口
 keymap.set("n", "<leader>l", "<C-w>l")
@@ -33,7 +38,7 @@ keymap.set("n", "<leader>nh", ":nohl<CR>")
 
 
 -- 终端
-keymap.set("n", "<C-t>", "<C-w>s:terminal pwsh<CR>i")
+keymap.set("n", "<C-t>", "<C-w>s:terminal pwsh<CR> :resize -15<CR>i")
 
 -- ---------- 终端模式 ---------- ---
 -- 切换光标到对应窗口
